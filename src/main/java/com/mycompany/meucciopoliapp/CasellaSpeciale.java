@@ -11,8 +11,7 @@ public class CasellaSpeciale extends Casella{
     {
         super(nome, posizione);
     }
-    
-    public void azioneSpeciale(Player giocatore)    //caselle speciali ai lati 
+    public void azioneSpeciale(Player giocatore)
     {
         
         if (posizione == 1)//via
@@ -24,6 +23,7 @@ public class CasellaSpeciale extends Casella{
         {
             if(giocatore.inPrigione == true)
             {
+                System.out.print("Vuoi aspettare tre turni oppure pagare la cauzione?");
                 //aspetta 3 turni-paga cauzione
             }
             

@@ -31,8 +31,7 @@ public class Luogo extends Casella {
     }
 
     public boolean acquistaLuogo(Player giocatori[]) { //da verificare se leva soldi al player(Da aggiungere controllo possessione luogo
-        for(int i = 0; i < giocatori.length; i++)
-        {    
+        for (int i = 0; i < giocatori.length; i++) {
             if (giocatori[i].portafoglio >= prezzoLuogo && giocatori[i].posizione == posizione && giocatori[i].rifiuto == false) {
                 if (acquistato != true) {
                     if (giocatori[i].aggiungiProprieta(posizione, prezzoLuogo) == true) {
@@ -48,7 +47,6 @@ public class Luogo extends Casella {
     }
 
     public void acquistaCase(Player giocatore) {
-
         for (int i = 0; i < giocatore.proprieta.length; i++) {
             if (giocatore.proprieta[i] == posizione) {
                 if (giocatore.portafoglio >= prezzoCase) {
@@ -56,7 +54,6 @@ public class Luogo extends Casella {
                     giocatore.portafoglio -= prezzoCase;
                     applicaMoltiplicatore();
                     break;
-
                 }
             }
         }
@@ -65,25 +62,19 @@ public class Luogo extends Casella {
 
     public void applicaMoltiplicatore() {
         moltiplicatore *= nCase;
-
     }
 
     public void applicaAffitto(Player[] giocatori) {
         affitto *= moltiplicatore; //da riguardare
-        if(acquistato == true)
-        {
-            for(int i = 0; i < giocatori.length; i++)
-            {
-                for(int j = 0; j < giocatori[i].proprieta.length; j++)
-                {
-                    if(giocatori[i].posizione == posizione && giocatori[i].proprieta[j] != posizione)
-                    {
+        if (acquistato == true) {
+            for (int i = 0; i < giocatori.length; i++) {
+                for (int j = 0; j < giocatori[i].proprieta.length; j++) {
+                    if (giocatori[i].posizione == posizione && giocatori[i].proprieta[j] != posizione) {
                         giocatori[i].portafoglio -= affitto;
                     }
                 }
             }
         }
     }
-    
-    
+
 }

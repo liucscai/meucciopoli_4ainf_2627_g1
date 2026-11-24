@@ -7,7 +7,7 @@ public class Player {
     protected boolean inPrigione;
     protected int posizione;
     int[] proprieta = new int[28];
-    boolean rifiuto;
+    protected boolean rifiuto;
 
     public Player() {
         nome = "Not defined";
@@ -19,8 +19,8 @@ public class Player {
         this.nome = nome;
         this.portafoglio = portafoglio;
         inPrigione = false;
-        rifiuto = false;
         posizione = 1;
+        rifiuto = false;
     }
 
     public boolean aggiungiProprieta(int posizione, int prezzoLuogo) {
